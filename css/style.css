@@ -24,6 +24,7 @@ body{
   background-image: url(../images/bg-body.png);
   width: 1140px;
   margin: 20px auto;
+  font-family: 'Montserrat', sans-serif;
 }
 .main-header, .main-footer {
 text-align:center;
@@ -83,3 +84,16 @@ margin: 0 auto;
   .main-footer{
     margin-top: 10px;
   }
+
+  .logo {
+/*  	float:left; */
+/*  	margin-right: 30px; */
+    align-items: center;
+    width: 10%;
+  }
+
+/* contenedor del formulario de registracion */
+  .form-container {
+	max-width: 350px;
+	margin: 0 auto;
+}

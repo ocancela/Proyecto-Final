@@ -6,15 +6,15 @@
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-
-     	<link rel="stylesheet" href="css/style.css">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
      <title>Home</title>
    </head>
 <body>
  <div class="contenedor">
 
    <header class="main-header">
-     <img src="images/logo.jpg" alt="logotipo" class="logo">
+     <img  ="logo" src="images/logo.png" alt="logotipo" class="logo">
 
      <nav class="categorias">
        <ul>
@@ -22,9 +22,6 @@
          <li><a href="#">capacitación</a></li>
          <li><a href="#">Emprendimientos</a></li>
          <li><a href="#">Obtener Título</a></li>
-         <li><a href="#">Perfil</a></li>
-         <li><a href="#">contacto</a></li>
-         <li><a href="#">Quiero Ayudar</a></li>
          <li><a href="#">Recreación</a></li>
        </ul>
      </nav>
@@ -65,8 +62,8 @@
    <footer>
      <nav class="main-footer">
        <ul>
-         <li><a href="#">Ingresar</a></li>
-         <li><a href="#">Registro</a></li>
+         <li><a href="login.php">Ingresar</a></li>
+         <li><a href="registracion.php">Registracion</a></li>
         </ul>
      </nav>
    </footer>
