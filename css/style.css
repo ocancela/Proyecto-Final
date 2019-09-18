@@ -92,8 +92,31 @@ margin: 0 auto;
     width: 10%;
   }
 
-/* contenedor del formulario de registracion */
-  .form-container {
+/* FORMULARIOS*/
+
+.form-container {
 	max-width: 350px;
 	margin: 0 auto;
+}
+.field-group input {
+	width: 100%;
+  border: 1px solid #ccc;
+  padding: 8px 38px 8px 8px;
+}
+.remember-me {
+	text-align: right;
+}
+.remember-me input {
+	width: auto;
+}
+.access-form button {
+/*	font-size: 16px; */
+  background-color: #3c8dbc;
+  border: 1px solid #3c8dbc;
+  color: #fff;
+  text-transform: capitalize;
+  width: 70%;
+  padding: 12px 20px;
+  border-radius: 10px;
+	cursor: pointer;
 }
