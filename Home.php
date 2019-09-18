@@ -64,7 +64,7 @@
        <ul>
          <li><a href="login.php">Ingresar</a></li>
          <li><a href="registracion.php">Registracion</a></li>
-        </ul>
+       </ul>
      </nav>
    </footer>
 </div>
