@@ -15,10 +15,10 @@
  <div class="contenedor">
 
    <header class="main-header">
-     <img  ="logo" src="images/logo.png" alt="logotipo" class="logo">
+     <img  class="logo" src="images/logo.png" alt="logotipo">
      <ul>
        <li><a href="login.php">Ingresar</a></li>
-       <li><a href="registracion.php">Registracion</a></li>
+       <li><a href="registracion.php">Registrarse</a></li>
      </ul>
      <nav class="categorias">
        <ul>
@@ -77,9 +77,10 @@
 
    <footer>
      <nav class="main-footer">
+       <img  class="logo-footer" src="images/logo-footer.png" alt="logotipo">
        <ul>
-         <li><a href="login.php">Ingresar</a></li>
-         <li><a href="registracion.php">Registracion</a></li>
+         <li><a href="#">Contacto</a></li>
+         <li><a href="#">Quiero Ayudar</a></li>
        </ul>
      </nav>
    </footer>

@@ -26,7 +26,6 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 .main-header {
-
   text-align:center;
   margin: 0 auto;
 }
@@ -34,33 +33,54 @@ body{
 .logo{
   border-radius: 50%;
   align-items: center;
-  width: 15%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .main-header ul{
   overflow:hidden;
 }
 
 .main-header li a{
-  float: left;
-  width: 45%;
+  float: right;
+  width: 35%;
   text-align: center;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 10px;
   color: white;
-  background-color: RGBa(120, 22, 22,0.8);
+  background-color: RGB(120, 22, 22);
   text-transform: uppercase;
   font-weight: bold;
-  border-radius:25%;
-  margin-left: 15px;
+  font-size: 0.7em;
+  margin-right: 10%;
+  margin-bottom: 1%;
 }
 .categorias{
   display: none;
 }
 .main-footer{
-  display: none;
+  background-color: rgb(43, 8, 8);
+  overflow: hidden;
 }
+.logo-footer{
+  width: 30%;
+  margin: 2% 5%;
+  float: left;
+}
+
+.main-footer li a{
+  color: white;
+  float: right;
+  width: 25%;
+  font-weight: bold;
+  font-size: 0.5em;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+
 /*posteos*/
 
 .post{
@@ -99,7 +119,6 @@ body{
 .post p{
   margin-top: 3px;
   margin-bottom: 20px;
-
 }
 
 /* FORMULARIOS*/
@@ -132,8 +151,11 @@ body{
 }
 /*Media query para PC*/
 
-@media (min-width: 1240px) {
+/* Para Laptop */
+/* @media (min-width: 1024px) { */
 
+/* Para Tablet y mas */
+@media (min-width: 768px) {
   .main-header{
     overflow: hidden;
     position: relative;
@@ -141,23 +163,22 @@ body{
 
   .logo {
     width: 10%;
-    float:left;
+/*    float:left; */
   }
 
   .main-header ul{
     width: 100%;
     float: right;
     position: absolute;
-    bottom: 35%;
+    bottom: 12%;
   }
 
   .main-header li a{
     float: right;
-    width: 20%;
-    margin-right: 20px;
-
+    width: 12%;
+    margin-right: 1%;
+    font-size: 0.5em;
   }
-
 
   .posteos{
     overflow: hidden;
@@ -168,8 +189,16 @@ body{
     float:left;
   }
   .post{
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+/*    margin-top: 20px; */
+    margin-bottom: 10px;
   }
+  .logo-footer{
+    width: 30%;
+  }
+
+  .main-footer li a{
+    width: 25%;
+    font-size: 1.5em;
+  }
+
 }
