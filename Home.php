@@ -8,6 +8,7 @@
      <meta charset="utf-8">
      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="css/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Home</title>
    </head>
 <body>
@@ -15,7 +16,10 @@
 
    <header class="main-header">
      <img  ="logo" src="images/logo.png" alt="logotipo" class="logo">
-
+     <ul>
+       <li><a href="login.php">Ingresar</a></li>
+       <li><a href="registracion.php">Registracion</a></li>
+     </ul>
      <nav class="categorias">
        <ul>
          <li><a href="#">Trabajo</a></li>
@@ -29,35 +33,47 @@
 
   <section class="posteos">
     <article class="post">
+      <h2>OFERTAS DE TRABAJO</h2>
       <div class="photo-container">
-        <img class="photo" src="images/Mandela_2.jpg" alt="foto 01">
+        <img class="photo" src="images/trabajo.jpg" alt="foto 01">
+        <a class="more" href="#">ver más</a>
       </div>
-      <h2>Lorem ipsum amet</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-      <a class="more" href="#">ver más</a>
+      <p>Breve descripción del post.</p>
     </article>
     <article class="post">
+      <h2>OFERTAS DE CAPACITACIÓN</h2>
       <div class="photo-container">
-        <img class="photo" src="images/Mandela_1.jpg" alt="foto 02">
+        <img class="photo" src="images/capacitacion.png" alt="foto 01">
+        <a class="more" href="#">ver más</a>
       </div>
-      <h2>Lorem ipsum amet</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-      <a class="more" href="#">ver más</a>
+      <p>Breve descripción del post.</p>
     </article>
     <article class="post">
+      <h2>OBTENER TÍTULO</h2>
       <div class="photo-container">
-        <img class="photo" src="images/Mandela_3.jpg" alt="foto 03">
+        <img class="photo" src="images/graduacion.jpg" alt="foto 01">
+        <a class="more" href="#">ver más</a>
       </div>
-      <h2>Lorem ipsum amet</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-      <a class="more" href="#">ver más</a>
+      <p>Breve descripción del post.</p>
+    </article>
+    <article class="post">
+      <h2>EMPRENDIMIENTOS</h2>
+      <div class="photo-container">
+        <img class="photo" src="images/emprendimiento.jpg" alt="foto 01">
+        <a class="more" href="#">ver más</a>
+      </div>
+      <p>Breve descripción del post.</p>
+    </article>
+    <article class="post">
+      <h2>RECREACIÓN</h2>
+      <div class="photo-container">
+        <img class="photo" src="images/entretenimiento.jpg" alt="foto 01">
+        <a class="more" href="#">ver más</a>
+      </div>
+      <p>Breve descripción del post.</p>
     </article>
 
   </section>
-
-
-
-
 
    <footer>
      <nav class="main-footer">
