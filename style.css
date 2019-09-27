@@ -1,0 +1,211 @@
+/*San juan bautista*/
+
+/*reseteo general*/
+
+*{/*selector universal*/
+  box-sizing: border-box;
+}
+ul, ol {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li{
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;}
+/*mobile first*/
+
+body{
+  background-image: url(../images/fondo-cielo.png);
+  width: 95%;
+  margin:0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.main-header {
+  text-align:center;
+  margin: 0 auto;
+}
+
+.logo{
+  border-radius: 50%;
+  align-items: center;
+  width: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.main-header ul{
+  overflow:hidden;
+}
+
+.main-header li a{
+  float: right;
+  width: 35%;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 10px;
+  color: white;
+  background-color: RGB(120, 22, 22);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.7em;
+  margin-right: 10%;
+  margin-bottom: 1%;
+}
+.categorias{
+  display: none;
+}
+.main-footer{
+  background-color: rgb(43, 8, 8);
+  overflow: hidden;
+}
+.logo-footer{
+  width: 30%;
+  margin: 2% 5%;
+  float: left;
+}
+
+.main-footer li a{
+  color: white;
+  float: right;
+  width: 25%;
+  font-weight: bold;
+  font-size: 0.5em;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+
+/*posteos*/
+
+.post{
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: solid 3px rgba(102, 179, 255,0.3);
+}
+
+.post h2{
+  background-color: RGB(120, 22, 22);
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.photo-container{
+  position: relative;
+}
+.photo {
+  width: 100%;
+}
+.more{
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: RGB(120, 22, 22);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.post p{
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIOS*/
+
+.form-container {
+	max-width: 350px;
+	margin: 0 auto;
+}
+.field-group input {
+	width: 100%;
+  border: 1px solid #ccc;
+  padding: 8px 38px 8px 8px;
+}
+.remember-me {
+	text-align: right;
+}
+.remember-me input {
+	width: auto;
+}
+.access-form button {
+/*	font-size: 16px; */
+  background-color: #3c8dbc;
+  border: 1px solid #3c8dbc;
+  color: #fff;
+  text-transform: capitalize;
+  width: 70%;
+  padding: 12px 20px;
+  border-radius: 10px;
+	cursor: pointer;
+}
+
+/*
+.mensaje_error small {
+  color: red;
+}*/
+
+
+/*Media query para PC*/
+
+/* Para Laptop */
+/* @media (min-width: 1024px) { */
+
+/* Para Tablet y mas */
+@media (min-width: 768px) {
+  .main-header{
+    overflow: hidden;
+    position: relative;
+  }
+
+  .logo {
+    width: 10%;
+/*    float:left; */
+  }
+
+  .main-header ul{
+    width: 100%;
+    float: right;
+    position: absolute;
+    bottom: 12%;
+  }
+
+  .main-header li a{
+    float: right;
+    width: 12%;
+    margin-right: 1%;
+    font-size: 0.5em;
+  }
+
+  .posteos{
+    overflow: hidden;
+  }
+  .post{
+    width: 50%;
+    height: 500px;
+    float:left;
+  }
+  .post{
+/*    margin-top: 20px; */
+    margin-bottom: 10px;
+  }
+  .logo-footer{
+    width: 30%;
+  }
+
+  .main-footer li a{
+    width: 25%;
+    font-size: 1.5em;
+  }
+
+}

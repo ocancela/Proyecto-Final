@@ -1,17 +1,27 @@
 <?php
+
+  $titulo = "SJB | Login";
   $datosregistracion = [];
-  include "validar.php";
+  require_once("funciones.php");
+
+  if($_POST){
+    $errores = validarLogin($_POST);
+
+    if(!$errores){
+      loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
+
+      header("Location:Home.php");
+      exit; //Siempre después de una redirección.
+
+    }
+  }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Registracion</title>
-  </head>
+
+  <?php require_once("head.php") ?>
 
   <body>
     <header  class="main-header">
@@ -22,25 +32,37 @@
       <section class="form-container">
       	<h1>Bienvenido</h1>
 
-	      <form action="Home.php" method="POST">
+	      <form action="login.php" method="POST">
+
+<!--     Login solo con Email asique saco el campo username
+
 	        <div class="field-group">
 	          <label for="username">Nombre de Usuario</label>
 	          <input type="text" name="username" maxlength="15" required><br>
-	        </div>
+	        </div>  -->
 
 	        <div class="field-group">
 	          <label for="email">Email</label>
-	          <input type="email" name="email" required><br>
+            <?php  if(!isset($errores['email'])): ?>
+              <input type="email" id="email" name="email" value="">
+            <?php else: ?>
+              <input type="email" id="email" name="email" value="">
+            <?php endif ?>
+          <small id="emailHelp">
+            <?php if(isset($errores['email'])) :?>
+              <?= $errores['email'] ?>
+            <?php endif ?>
+          </small>
 	        </div>
 
 	        <div class="field-group">
 	          <label for="password">Contraseña</label>
-	          <input type="password" name="password" value="" required><br>
+	          <input type="password" name="password" value=""><br>
 	        </div>
 					<br>
 					<div class="field-group remember-me">
-						<input type="checkbox" id="remember-me" name="remember-me" value="">
-						<label for="remember-me">Recordarme</label><br>
+						<input type="checkbox" id="rememberMe" name="rememberMe" value="">
+						<label for="rememberMe">Recordarme</label><br>
 					</div>
 
 					<button type="submit" name="send"><strong>Ingresar</strong></button>

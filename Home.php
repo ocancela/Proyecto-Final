@@ -1,16 +1,28 @@
 <?php
 
+  $titulo = "San Juan Bautista | Home";
 
- ?>
+  require_once("funciones.php");
+
+  //var_dump($_SESSION); //Para ver que realmente está cargado el dato en sesión.
+
+  if(isset($_COOKIE['email'])){
+    //Si está seteada la cookie es porque el usuario tildó recordarme. Vamos a loguerarlo desde la cookie.
+    loguearUsuario($_COOKIE['email']);
+  }
+
+  if (usuarioLogueado()) {
+    $usuario = buscarUsuarioPorEmail($_SESSION['email']);  // code...
+}
+
+?>
+
+
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="css/style.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Home</title>
-   </head>
+
+  <?php require_once("head.php") ?>
+
 <body>
  <div class="contenedor">
 
