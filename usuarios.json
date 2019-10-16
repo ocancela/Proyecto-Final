@@ -2,10 +2,11 @@
     "usuarios": [
         {
             "id": 1,
-            "nombre": "Valentina",
-            "apellido": "Mammolino",
-            "email": "vmammolino@gmail.com",
-            "password": "$2y$10$nB1MSqYMLQ4EHyt0o1LXNOM1NME\/2HIjj403qe0ccRpICxI99lc9a"
+            "nombre": "ale",
+            "apellido": "vivone",
+            "email": "ale@dh.com",
+            "password": "$2y$10$Hd35v8se0MIYhdzyeiCXuej8T5j6yNmgWWJSWJowLgelMFvSiqevq"
         }
-    ]
+    ],
+    "productos": []
 }

@@ -37,6 +37,7 @@ body{
   padding-top: 1%;
   padding-bottom: 1%;
 }
+
 .main-header ul{
   overflow:hidden;
 }
@@ -79,7 +80,19 @@ body{
   margin-top: 5%;
 }
 
+/* imagen inicial de la pagina*/
+.banner-inicial{
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 
+/* imagen del usuario logueado */
+.avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 
 /*posteos*/
 

@@ -4,6 +4,11 @@
   $datosregistracion = [];
   require_once("funciones.php");
 
+  if(usuarioLogueado()){
+    header("Location:index.php");
+    exit;
+  }
+
   if($_POST){
     $errores = validarLogin($_POST);
 
@@ -34,13 +39,6 @@
 
 	      <form action="login.php" method="POST">
 
-<!--     Login solo con Email asique saco el campo username
-
-	        <div class="field-group">
-	          <label for="username">Nombre de Usuario</label>
-	          <input type="text" name="username" maxlength="15" required><br>
-	        </div>  -->
-
 	        <div class="field-group">
 	          <label for="email">Email</label>
             <?php  if(!isset($errores['email'])): ?>
@@ -48,7 +46,7 @@
             <?php else: ?>
               <input type="email" id="email" name="email" value="">
             <?php endif ?>
-          <small id="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">
             <?php if(isset($errores['email'])) :?>
               <?= $errores['email'] ?>
             <?php endif ?>
@@ -65,11 +63,19 @@
 						<label for="rememberMe">Recordarme</label><br>
 					</div>
 
-					<button type="submit" name="send"><strong>Ingresar</strong></button>
+					<button type="submit" class="btn btn-primary" name="send"><strong>Ingresar</strong></button>
+          <a class="btn btn-outline-secondary float-right" href="Home.php">Cancelar</a>
 
 	      </form>
 	    </section>
 
     </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   </body>
 </html>

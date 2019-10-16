@@ -13,30 +13,31 @@ function validarRegistro($datos){
       $datosFinales[$key] = $value;
     }
   }
-  // Validar nombre
-  if(strlen($datosFinales['nombre']) == 0){
-    $errores['nombre'] = "El campo es obligatorio.";
-  } else if( !ctype_alpha($datosFinales['nombre'])){
-    $errores['nombre'] = "Por favor ingrese caracteres alfabéticos.";
-  }
+
+	// Validar nombre
+	if(strlen($datosFinales['nombre']) == 0){
+	  $errores['nombre'] = "El campo es obligatorio.";
+	} else if( !ctype_alpha($datosFinales['nombre'])){
+	  $errores['nombre'] = "Por favor ingrese caracteres alfabéticos.";
+	}
 
 	// Validar apellido
-  if(strlen($datosFinales['apellido']) == 0){
-    $errores['apellido'] = "El campo es obligatorio.";
-  } else if( !ctype_alpha($datosFinales['apellido'])){
-    $errores['apellido'] = "Por favor ingrese caracteres alfabéticos.";
-  }
+	if(strlen($datosFinales['apellido']) == 0){
+	  $errores['apellido'] = "El campo es obligatorio.";
+	} else if( !ctype_alpha($datosFinales['apellido'])){
+	  $errores['apellido'] = "Por favor ingrese caracteres alfabéticos.";
+	}
 
-  //validar email
-  if(strlen($datosFinales['email']) == 0){
-    $errores['email'] = "El campo es obligatorio.";
-  } else if(!filter_var($datosFinales['email'], FILTER_VALIDATE_EMAIL)){
-    $errores['email'] = "Por favor ingrese un email en formato correcto.";
-  }  else if( existeUsuario($datosFinales['email']) ){
-     $errores['email'] = "El email ya se encuentra registrado.";
-   }
+	//validar email
+	if(strlen($datosFinales['email']) == 0){
+	  $errores['email'] = "El campo es obligatorio.";
+	} else if(!filter_var($datosFinales['email'], FILTER_VALIDATE_EMAIL)){
+	  $errores['email'] = "Por favor ingrese un email en formato correcto.";
+	}  else if( existeUsuario($datosFinales['email']) ){
+	   $errores['email'] = "El email ya se encuentra registrado.";
+	 }
 
- //validar contraseña
+ 	//validar contraseña
   if(strlen($datosFinales['password']) == 0){
     $errores['password'] = "El campo es obligatorio.";
   } else if(strlen($datosFinales['password']) < 8){
@@ -55,9 +56,21 @@ function validarRegistro($datos){
       $errores['tyc'] = "Por favor acepte los términos y condiciones.";
     }
 
+    //Validar errores en la carga de la imagen de perfil.
+    if(strlen($_FILES['avatar']['name']) == 0){
+      $errores['avatar'] = "Por favor suba una imagen de perfil.";
+    } else {
+      $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
+
+      if($ext !== "jpg" && $ext !== "png" && $ext !== "jpeg"){
+        $errores['avatar'] = "El archivo debe ser una imagen de tipo .jpg, .jpeg, .png";
+      }
+		}
+
   return $errores;
 }
 
+// Buscar siguiente numero de id
 function nextId(){
   $json = file_get_contents("usuarios.json");
   $usuarios = json_decode($json, true);
@@ -68,6 +81,7 @@ function nextId(){
   return $lastId + 1;
 }
 
+// Funcion para Crear el usuario
 function crearUsuario(){
   return [
     "id" => nextId(), //tenemos que autoincrementar el nº
@@ -78,6 +92,7 @@ function crearUsuario(){
   ];
 }
 
+// Funcion para Guardar el usuario en el archivo json
 function guardarUsuario($user){
   $json = file_get_contents("usuarios.json");
   $usuarios = json_decode($json, true);
@@ -87,6 +102,7 @@ function guardarUsuario($user){
   file_put_contents("usuarios.json", $json);
 }
 
+// Funcion para buscar un usuario por email
 function buscarUsuarioPorEmail($email){
   $json = file_get_contents("usuarios.json");
   $usuarios = json_decode($json, true);
@@ -99,14 +115,14 @@ function buscarUsuarioPorEmail($email){
   return null;
 }
 
+// Funcion que retorna el usuario encontrado
 function existeUsuario($email){
   return buscarUsuarioPorEmail($email) !== null;
 }
 
+// Funcion que valida los datos del LOGIN
 function validarLogin($datos){
   $errores = [];
-
-	//var_dump($datos);
   //validar email
   if(strlen($datos['email']) == 0){
     $errores['email'] = "El campo es obligatorio.";
@@ -128,20 +144,28 @@ function validarLogin($datos){
   return $errores;
 }
 
+// Funcion que hace login del usuario que ingreso
 function loguearUsuario($email){
   $_SESSION['email'] = $email; //Nos falta iniciar la sesión. Colocamos session_start() al inicio de este archivo.
 
   if(isset($_POST['rememberMe'])){
     //Si el usuario tildó "recordarme" vamos a crear la cookie y guardar su email.
-    setcookie("email", $email, time()+ 30);
+    setcookie("email", $email, time()+ 60 * 60);
   }
 }
+
+// Funcion que devuelve true o false segun el usuario se haya o no logueado
 function usuarioLogueado(){
   return isset($_SESSION['email']);
 }
 
-
-
+// Funcion que carga en un array de usuarios todos los usuario guardados en el json
+function usuariosRegistrados(){
+  $json = file_get_contents("usuarios.json");
+  $data = json_decode($json, true);
+  $usuarios = $data['usuarios'];
+  return $usuarios;
+}
 
 
 
