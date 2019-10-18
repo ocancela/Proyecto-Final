@@ -38,7 +38,6 @@
 
   }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +54,7 @@
       <section class="form-container">
       <h1>Registrate</h1>
 
-        <form action="registracion.php" method="POST">
+        <form action="registracion.php" method="POST" enctype="multipart/form-data">
           <div class="field-group">
             <label for="nombre">Nombre</label>
             <?php  if(!isset($errores['nombre'])): ?>

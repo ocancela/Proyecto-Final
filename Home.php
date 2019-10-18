@@ -42,7 +42,7 @@
        <?php else: ?>
          <div class="d-flex flex-row-reverse flex-wrap">
            <a class="btn btn-danger" href="logout.php">Logout</a>
-           <img class="avatar" src="avatar/<?= $usuario['nombre'] ?>.jpg">
+           <img class="avatar" src="avatar/<?= $usuario['nombre'] ?><?= $usuario['apellido'] ?>.jpg">
            <span><?= $usuario['email'] ?></span>
 
          </div>

@@ -6,6 +6,13 @@
             "apellido": "vivone",
             "email": "ale@dh.com",
             "password": "$2y$10$Hd35v8se0MIYhdzyeiCXuej8T5j6yNmgWWJSWJowLgelMFvSiqevq"
+        },
+        {
+            "id": 2,
+            "nombre": "Pablo",
+            "apellido": "Marmol",
+            "email": "pmarmol@dh.com",
+            "password": "$2y$10$HHItTS1q7dpXbGPsjh.6CuafDONoS3dixVFyhAJeeqlm0DMM.CH5."
         }
     ],
     "productos": []

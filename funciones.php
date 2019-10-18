@@ -4,10 +4,10 @@ session_start();
 /* validar la registracion */
 function validarRegistro($datos){
 	$errores = [];
-	$datosfinales = [];
+	$datosFinales = [];
 
   foreach($datos as $key => $value){
-    if($key == "email"){
+    if($key == "nombre" || $key=="apellido"|| $key == "email"){
       $datosFinales[$key] = trim($value);
     }else{
       $datosFinales[$key] = $value;
@@ -18,14 +18,14 @@ function validarRegistro($datos){
 	if(strlen($datosFinales['nombre']) == 0){
 	  $errores['nombre'] = "El campo es obligatorio.";
 	} else if( !ctype_alpha($datosFinales['nombre'])){
-	  $errores['nombre'] = "Por favor ingrese caracteres alfabéticos.";
+	  $errores['nombre'] = "Por favor ingrese caracteres alfabéticos sin espacios.";
 	}
 
 	// Validar apellido
 	if(strlen($datosFinales['apellido']) == 0){
 	  $errores['apellido'] = "El campo es obligatorio.";
 	} else if( !ctype_alpha($datosFinales['apellido'])){
-	  $errores['apellido'] = "Por favor ingrese caracteres alfabéticos.";
+	  $errores['apellido'] = "Por favor ingrese caracteres alfabéticos sin espacios.";
 	}
 
 	//validar email
@@ -61,7 +61,6 @@ function validarRegistro($datos){
       $errores['avatar'] = "Por favor suba una imagen de perfil.";
     } else {
       $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
-
       if($ext !== "jpg" && $ext !== "png" && $ext !== "jpeg"){
         $errores['avatar'] = "El archivo debe ser una imagen de tipo .jpg, .jpeg, .png";
       }
