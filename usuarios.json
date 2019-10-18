@@ -13,6 +13,13 @@
             "apellido": "Marmol",
             "email": "pmarmol@dh.com",
             "password": "$2y$10$HHItTS1q7dpXbGPsjh.6CuafDONoS3dixVFyhAJeeqlm0DMM.CH5."
+        },
+        {
+            "id": 3,
+            "nombre": "Valentina",
+            "apellido": "Mammolino",
+            "email": "vm@gmail.com",
+            "password": "$2y$10$Wl2kSzxE47awbnKhei5JFOBdwI6FxuYLgjhxx4SS2zf2XqYFLnQyC"
         }
     ],
     "productos": []

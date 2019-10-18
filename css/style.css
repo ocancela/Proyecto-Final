@@ -52,7 +52,7 @@ body{
   background-color: RGB(120, 22, 22);
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.7em;
+  font-size: 0.5em;
   margin-right: 10%;
   margin-bottom: 1%;
 }
@@ -190,6 +190,7 @@ body{
     float: right;
     width: 12%;
     margin-right: 1%;
+    margin-left: 1%;
     font-size: 0.5em;
   }
 

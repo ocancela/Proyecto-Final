@@ -80,14 +80,6 @@
               </div>
               <p>Breve descripción del post.</p>
             </article>
-            <article class="post">
-              <h2>RECREACIÓN</h2>
-              <div class="photo-container">
-                <img class="photo" src="images/entretenimiento.jpg" alt="foto 01">
-                <a class="more" href="#">ver más</a>
-              </div>
-              <p>Breve descripción del post.</p>
-            </article>
 
           </section>
         <?php endif ?>

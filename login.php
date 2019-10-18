@@ -46,17 +46,22 @@
             <?php else: ?>
               <input type="email" id="email" name="email" value="">
             <?php endif ?>
-          <small id="emailHelp" class="form-text text-muted">
+          <small id="emailHelp" class="form-text text-danger">
             <?php if(isset($errores['email'])) :?>
               <?= $errores['email'] ?>
             <?php endif ?>
           </small>
 	        </div>
 
-	        <div class="field-group">
-	          <label for="password">Contraseña</label>
-	          <input type="password" name="password" value=""><br>
-	        </div>
+          <div class="field-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" value="">
+            <small id="emailHelp" class="form-text text-danger">
+              <?php if(isset($errores['password'])) :?>
+                <?= $errores['password'] ?>
+              <?php endif ?>
+            </small>
+          </div>
 					<br>
 					<div class="field-group remember-me">
 						<input type="checkbox" id="rememberMe" name="rememberMe" value="">
