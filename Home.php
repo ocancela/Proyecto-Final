@@ -2,11 +2,9 @@
 
   $titulo = "San Juan Bautista | Home";
 
-  //require_once("funciones.php");
-  require_once("init.php");
+    require_once("init.php");
 
-  //var_dump($_SESSION); //Para ver que realmente está cargado el dato en sesión.
-
+  
   if(isset($_COOKIE['email'])){
     //Si está seteada la cookie es porque el usuario tildó recordarme. Vamos a loguerarlo desde la cookie.
     $auth->loguearUsuario($_COOKIE['email']);

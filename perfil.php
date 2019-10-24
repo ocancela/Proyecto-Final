@@ -1,6 +1,6 @@
 <?php
   $datosregistracion = [];
-  include "validar.php";
+  require_once("validar.php");
 
 ?>
 

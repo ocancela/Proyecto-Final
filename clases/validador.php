@@ -10,10 +10,9 @@ class Validador
 
     $errores = [];
     $datosFinales = [];
-    //var_dump($datos);
 
     foreach($datos as $key => $value){
-      if($key == "username" || $key == "email"){
+      if($key == "nombre" || $key == "apellido"|| $key == "email"){
         $datosFinales[$key] = trim($value);
       }else{
         $datosFinales[$key] = $value;

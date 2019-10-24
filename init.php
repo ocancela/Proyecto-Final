@@ -1,10 +1,10 @@
 <?php
 //Todo lo necesario para instanciar clases.
 
-include "clases/dbjson.php";
-include "clases/usuario.php";
-include "clases/auth.php";
-include "clases/validador.php";
+require_once ("clases/dbjson.php");
+require_once ("clases/usuario.php");
+require_once ("clases/auth.php");
+require_once ("clases/validador.php");
 
 $data = "usuarios.json";
 $auth = new Auth;
