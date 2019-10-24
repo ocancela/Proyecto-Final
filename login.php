@@ -2,18 +2,19 @@
 
   $titulo = "SJB | Login";
   $datosregistracion = [];
-  require_once("funciones.php");
+//  require_once("funciones.php");
+  require_once("init.php");
 
-  if(usuarioLogueado()){
-    header("Location:index.php");
+  if($auth->usuarioLogueado()){
+    header("Location:Home.php");
     exit;
   }
 
   if($_POST){
-    $errores = validarLogin($_POST);
+    $errores = Validador::validarLogin($_POST);
 
     if(!$errores){
-      loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
+      $auth->loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
 
       header("Location:Home.php");
       exit; //Siempre después de una redirección.

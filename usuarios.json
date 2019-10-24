@@ -2,24 +2,31 @@
     "usuarios": [
         {
             "id": 1,
-            "nombre": "ale",
-            "apellido": "vivone",
-            "email": "ale@dh.com",
-            "password": "$2y$10$Hd35v8se0MIYhdzyeiCXuej8T5j6yNmgWWJSWJowLgelMFvSiqevq"
+            "nombre": "Pedro",
+            "apellido": "Picapiedra",
+            "email": "ppicapiedra@dh.com",
+            "password": "$2y$10$l5NKFZlwm3br8AhqHxbOIepJBQkv4OH6nUM3vi3hdsSphMMopYQnW"
         },
         {
             "id": 2,
-            "nombre": "Pablo",
-            "apellido": "Marmol",
-            "email": "pmarmol@dh.com",
-            "password": "$2y$10$HHItTS1q7dpXbGPsjh.6CuafDONoS3dixVFyhAJeeqlm0DMM.CH5."
+            "nombre": "Oscar",
+            "apellido": "Cancela",
+            "email": "oacancela@dh.com",
+            "password": "$2y$10$ps\/eUwNsqPHQTPjv\/XW7AeGal2.5\/xLo3ZrdfJ2.gdahuPH3BIrii"
         },
         {
             "id": 3,
-            "nombre": "Valentina",
-            "apellido": "Mammolino",
-            "email": "vm@gmail.com",
-            "password": "$2y$10$Wl2kSzxE47awbnKhei5JFOBdwI6FxuYLgjhxx4SS2zf2XqYFLnQyC"
+            "nombre": "Pablo",
+            "apellido": "Marmol",
+            "email": "pmarmol@dh.com",
+            "password": "$2y$10$ElRV4G9Vx7vIj5\/0lbZV5eD5pHKq2VadC\/ZQeWh4rblJQ02GoAHkO"
+        },
+        {
+            "id": 4,
+            "nombre": "Vilma",
+            "apellido": "Picapiedra",
+            "email": "vpicapiedra@dh.com",
+            "password": "$2y$10$QIsUruT0wp7eBrNeTw\/Rh.Ay7v9u.MhuYZbZJWpaMNChpChRSvVCa"
         }
     ],
     "productos": []

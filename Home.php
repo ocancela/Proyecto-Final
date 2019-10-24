@@ -2,17 +2,18 @@
 
   $titulo = "San Juan Bautista | Home";
 
-  require_once("funciones.php");
+  //require_once("funciones.php");
+  require_once("init.php");
 
   //var_dump($_SESSION); //Para ver que realmente está cargado el dato en sesión.
 
   if(isset($_COOKIE['email'])){
     //Si está seteada la cookie es porque el usuario tildó recordarme. Vamos a loguerarlo desde la cookie.
-    loguearUsuario($_COOKIE['email']);
+    $auth->loguearUsuario($_COOKIE['email']);
   }
 
-  if (usuarioLogueado()) {
-    $usuario = buscarUsuarioPorEmail($_SESSION['email']);  // code...
+  if ($auth->usuarioLogueado()) {
+    $usuario = $json->buscarUsuarioPorEmail($_SESSION['email']);  // code...
 }
 
 ?>
@@ -32,7 +33,7 @@
 
    <main class="main-header">
 
-     <?php if(!usuarioLogueado()): ?>
+     <?php if(!$auth->usuarioLogueado()): ?>
        <div class="d-flex flex-row-reverse flex-wrap">
          <a class="btn btn-success" href="login.php">Login</a>
          <a class="btn btn-primary" href="registracion.php">Registrarse</a>
@@ -42,10 +43,9 @@
        <?php else: ?>
          <div class="d-flex flex-row-reverse flex-wrap">
            <a class="btn btn-danger" href="logout.php">Logout</a>
-           <img class="avatar" src="avatar/<?= $usuario['nombre'] ?><?= $usuario['apellido'] ?>.jpg">
-           <span><?= $usuario['email'] ?></span>
-
-         </div>
+           <img class="avatar" src="avatar/<?= $usuario->getNombre()?><?= $usuario->getApellido() ?>.jpg">
+           <span>Hola <?= $usuario->getEmail() ?></span>
+        </div>
 
           <section class="posteos">
             <article class="post">

@@ -2,9 +2,10 @@
 
   $titulo = "SJB | Registrarme";
 
-  require_once("funciones.php");
+  //require_once("funciones.php");
+  require_once("init.php");
 
-  if(usuarioLogueado()){
+  if($auth->usuarioLogueado()){
     header("Location:Home.php");
     exit;
   }
@@ -14,9 +15,10 @@
   $apellidoOk = "";
   $emailOk = "";
 
+
   if($_POST){
-    $errores = validarRegistro($_POST);
-    //var_dump($_POST, $errores);
+    $errores = Validador::validarRegistro($_POST);
+
 
     $nombreOk = trim($_POST['nombre']);
     $apellidoOk = trim($_POST['apellido']);
@@ -24,13 +26,15 @@
 
 
   if(!$errores){
-      $usuario = crearUsuario();
-      guardarUsuario($usuario);
+
+      $usuario= new Usuario($_POST);
+
+      $json->guardarUsuario($usuario);
 
       $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
       move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/". $_POST['nombre']. $_POST['apellido']. "." . $ext);
 
-      loguearUsuario($_POST['email']);
+      $auth->loguearUsuario($_POST['email']);
 
       header("Location:Home.php");
       exit;
@@ -85,7 +89,7 @@
 
           <div class="field-group">
             <label for="email">Email</label>
-            <?php  if(!isset($errores['apellido'])): ?>
+            <?php  if(!isset($errores['email'])): ?>
               <input type="email" id="email" name="email" value="<?= $emailOk ?>">
             <?php else: ?>
               <input type="email" id="email" name="email" value="">

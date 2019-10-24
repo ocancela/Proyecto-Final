@@ -1,5 +1,7 @@
 <?php
-include "functions.php";
+//require_once "funciones.php";
+require_once("init.php");
+
 
 if(!usuarioLogueado()){
   header("Location:Home.php");
@@ -13,9 +15,8 @@ if(isset($_COOKIE['email'])){
 
 if (usuarioLogueado()) {
   $usuario = buscarUsuarioPorEmail($_SESSION['email']);
-  $usuarios = usuariosRegistrados();
-  // var_dump($usuarios);
-  // exit;
+  $usuarios = $json->usuariosRegistrados();
+
 }
 
 ?>
