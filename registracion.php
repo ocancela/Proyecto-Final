@@ -5,7 +5,7 @@
   require_once("init.php");
 
   if($auth->usuarioLogueado()){
-    header("Location:Home.php");
+    header("Location:index.php");
     exit;
   }
 
@@ -35,7 +35,7 @@
 
       $auth->loguearUsuario($_POST['email']);
 
-      header("Location:Home.php");
+      header("Location:index.php");
       exit;
     }
 
@@ -146,7 +146,7 @@
 
           <button type="submit" class="btn btn-primary">Registrarme</button>
           <a class="btn btn-success float-right" href="login.php">Login</a>
-          <a class="btn btn-outline-secondary float-right" href="Home.php">Cancelar</a>
+          <a class="btn btn-outline-secondary float-right" href="index.php">Cancelar</a>
 
         </form>
       </section>

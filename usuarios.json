@@ -27,6 +27,13 @@
             "apellido": "Picapiedra",
             "email": "vpicapiedra@dh.com",
             "password": "$2y$10$QIsUruT0wp7eBrNeTw\/Rh.Ay7v9u.MhuYZbZJWpaMNChpChRSvVCa"
+        },
+        {
+            "id": 5,
+            "nombre": "Valentina",
+            "apellido": "Mammolino",
+            "email": "vmammolino@gmail.com",
+            "password": "$2y$10$G.SomTCxCZSBaYZ6mPu8cOIHdb4q3UExu94LZTqy2baKSTg3kToDm"
         }
     ],
     "productos": []

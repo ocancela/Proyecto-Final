@@ -20,7 +20,7 @@
       <section class="form-container">
 
       <h1>Registrate</h1>
-      <form action="Home.php" method="POST">
+      <form action="index.php" method="POST">
         Nombre:
         <input type="text" name="nombre" maxlength="50" required><br><br>
         Apellido:

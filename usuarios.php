@@ -3,7 +3,7 @@ require_once("init.php");
 
 
 if(!usuarioLogueado()){
-  header("Location:Home.php");
+  header("Location:index.php");
   exit;
 }
 
@@ -38,7 +38,7 @@ if (usuarioLogueado()) {
             <span>Hola: <?= $usuario['nombre'] ?></span>
           </div>
           <div class="">
-            <a href="Home.php">Home</a>
+            <a href="index.php">Home</a>
             <a class="btn btn-danger" href="logout.php">Logout</a>
           </div>
         <?php endif ?>

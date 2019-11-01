@@ -5,17 +5,21 @@
   require_once("init.php");
 
   if($auth->usuarioLogueado()){
-    header("Location:Home.php");
+    header("Location:index.php");
     exit;
   }
+
+  $emailOk = "";
 
   if($_POST){
     $errores = Validador::validarLogin($_POST);
 
-    if(!$errores){
-      $auth->loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al home.
+    $emailOk = trim($_POST['email']);
 
-      header("Location:Home.php");
+    if(!$errores){
+      $auth->loguearUsuario($_POST['email']); //Logueamos al usuario y lo mandamos logueado al index.
+
+      header("Location:index.php");
       exit; //Siempre después de una redirección.
 
     }
@@ -42,7 +46,7 @@
 	        <div class="field-group">
 	          <label for="email">Email</label>
             <?php  if(!isset($errores['email'])): ?>
-              <input type="email" id="email" name="email" value="">
+              <input type="email" id="email" name="email" value="<?= $emailOk ?>">
             <?php else: ?>
               <input type="email" id="email" name="email" value="">
             <?php endif ?>
@@ -69,7 +73,7 @@
 					</div>
 
 					<button type="submit" class="btn btn-primary" name="send"><strong>Ingresar</strong></button>
-          <a class="btn btn-outline-secondary float-right" href="Home.php">Cancelar</a>
+          <a class="btn btn-outline-secondary float-right" href="index.php">Cancelar</a>
 
 	      </form>
 	    </section>
