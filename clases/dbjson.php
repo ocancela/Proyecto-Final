@@ -8,8 +8,13 @@ class DbJson
 
   function __construct($file)
   {
-    $this->json = file_get_contents($file);
 
+  if(!file_exists($file)){
+    $data = ['usuarios'=>[]];
+    $this->json = json_encode($data);
+  }else {
+    $this->json = file_get_contents($file);
+  }
   }
 
   public function nextId(){

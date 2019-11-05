@@ -34,6 +34,13 @@
             "apellido": "Mammolino",
             "email": "vmammolino@gmail.com",
             "password": "$2y$10$G.SomTCxCZSBaYZ6mPu8cOIHdb4q3UExu94LZTqy2baKSTg3kToDm"
+        },
+        {
+            "id": 6,
+            "nombre": "Betty",
+            "apellido": "Marmol",
+            "email": "bmarmol@dh.com",
+            "password": "$2y$10$pIr6N4UoSwhKAAylIS7tzuoyO\/2lZWhcLbj3uwF38M9wKkiN2hsLq"
         }
     ],
     "productos": []
