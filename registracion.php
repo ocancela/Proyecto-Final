@@ -28,7 +28,7 @@
 
       $usuario= new Usuario($_POST);
 
-      $json->guardarUsuario($usuario);
+      $db->guardarUsuario($usuario);
 
       $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
       move_uploaded_file($_FILES["avatar"]['tmp_name'], "avatar/". $_POST['nombre']. $_POST['apellido']. "." . $ext);

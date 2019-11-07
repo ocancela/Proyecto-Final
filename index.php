@@ -11,7 +11,7 @@
   }
 
   if ($auth->usuarioLogueado()) {
-    $usuario = $json->buscarUsuarioPorEmail($_SESSION['email']);  // code...
+    $usuario = $db->buscarUsuarioPorEmail($_SESSION['email']);  // code...
 }
 
 ?>
